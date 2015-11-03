@@ -1,6 +1,6 @@
 {
   "name": "node-queue-logger",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Exposes a simple generic flexible logger interface and dumps messages into a rabbit queue.",
   "main": "index.js",
   "scripts": {
