@@ -1,0 +1,19 @@
+{
+  "name": "logger",
+  "version": "1.0.0",
+  "description": "Exposes a simple generic flexible logger interface and dumps messages into a rabbit queue.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "logger"
+  ],
+  "author": "Josh Graber",
+  "license": "MIT",
+  "dependencies": {
+    "amqp": "^0.2.4",
+    "lodash": "^3.10.1",
+    "rx": "^4.0.6"
+  }
+}
