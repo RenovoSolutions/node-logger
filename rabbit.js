@@ -11,6 +11,7 @@ module.exports = {
 			connection.exchange(config.exchange, {
 				type: 'direct',
 				durable: true,
+				autoDelete: false,
 			}, function(exchange) {
 				exchangeStream.onNext(exchange);
 			});
