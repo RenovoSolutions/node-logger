@@ -1,6 +1,6 @@
 {
   "name": "logger",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Exposes a simple generic flexible logger interface and dumps messages into a rabbit queue.",
   "main": "index.js",
   "scripts": {
