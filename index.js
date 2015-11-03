@@ -28,37 +28,35 @@ module.exports = {
 		});
 	},
 
-	debug: function(entry) {
-		entry = inflateMessage(entry);
-		entry.type = debugType;
-		log(entry);
+	debug: function(message) {
+		var logEntry = {
+			message: message,
+			type: debugType,
+		};
+		log(logEntry);
 	},
-	info: function(entry) {
-		entry = inflateMessage(entry);
-		entry.type = infoType;
-		log(entry);
+	info: function(message) {
+		var logEntry = {
+			message: message,
+			type: infoType,
+		};
+		log(logEntry);
 	},
-	warn: function(entry) {
-		entry = inflateMessage(entry);
-		entry.type = warnType;
-		log(entry);
+	warn: function(message) {
+		var logEntry = {
+			message: message,
+			type: warnType,
+		};
+		log(logEntry);
 	},
-	error: function(entry) {
-		entry = inflateMessage(entry);
-		entry.type = errorType;
-		log(entry);
+	error: function(message) {
+		var logEntry = {
+			message: message,
+			type: errorType,
+		};
+		log(logEntry);
 	},
 };
-
-function inflateMessage(entry) {
-	if (!_.isObject(entry)) {
-		entry = {
-			message: entry,
-		};
-	}
-
-	return entry;
-}
 
 function log(entry) {
 	entry.host = hostInfo.get();
