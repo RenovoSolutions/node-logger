@@ -1,5 +1,5 @@
 # node-queue-logger
-Node module for pushing log messages to the log queue.
+Node module for pushing log messages to a log queue.
 
 # Usage
 * Import the logger into your node application
