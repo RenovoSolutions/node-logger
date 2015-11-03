@@ -9,7 +9,7 @@ module.exports = {
 		var connected = Rx.Observable.fromEvent(connection, 'ready');
 		connected.subscribe(function() {
 			connection.exchange(config.exchange, {
-				type: 'fanout',
+				type: 'direct',
 				durable: true,
 			}, function(exchange) {
 				exchangeStream.onNext(exchange);
