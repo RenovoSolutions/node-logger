@@ -10,21 +10,24 @@ var infoType = 'INFO';
 var warnType = 'WARN';
 var errorType = 'ERROR';
 
-rabbit.subscribe(function(_exchange_) {
-	exchange = _exchange_;
-
-	if (_.any(pendingEntries)) {
-		pendingEntries.forEach(function(entry) {
-			exchange.publish(entry.type, entry);
-		});
-
-		pendingEntries = [];
-	}
-}, function() {
-	exchange = null;
-});
-
 module.exports = {
+	configure: function(rabbitConfig) {
+		var connecting = rabbit.configure(rabbitConfig);
+		connecting.subscribe(function(_exchange_) {
+			exchange = _exchange_;
+
+			if (_.any(pendingEntries)) {
+				pendingEntries.forEach(function(entry) {
+					exchange.publish(entry.type, entry);
+				});
+
+				pendingEntries = [];
+			}
+		}, function() {
+			exchange = null;
+		});
+	},
+
 	debug: function(entry) {
 		entry = inflateMessage(entry);
 		entry.type = debugType;
