@@ -22,4 +22,4 @@ logger.warn({ explosion: true });
 logger.error({ exception: myException });
 ```
 
-Uses npm module `amqp` to establish a connection to an amqp queue using the specified host / username / password.
+Uses npm module [`amqp`](https://www.npmjs.com/package/amqp) to establish a connection to an amqp queue using the specified host / username / password.
