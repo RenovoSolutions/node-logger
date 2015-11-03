@@ -21,3 +21,5 @@ logger.info({ count: 5 });
 logger.warn({ explosion: true });
 logger.error({ exception: myException });
 ```
+
+Uses npm module `amqp` to establish a connection to an amqp queue using the specified host / username / password.
